@@ -1,0 +1,23 @@
+{
+	"name": "Player Summaries",
+	"info": [
+		"As the world's most popular sport, soccer (or known as football outside of America), is not without controversy. During a soccer match, a player may by ejected (removed from the match) if a referee gives them a red card. This severe penalty results in the player's team having to continue with one less player for the remainder of the match, providing the opposing team with an advantage. A lesser penalty is when a referee gives a player a yellow card, which serves as a warning since the player is ejected if they receive two yellow cards in the match. Although referees are provided guidelines for when they should issue a player a yellow or red card (violent fouls or threatening and abusive language), there is still subjectivity in their decision. One might suspect that there is a racial bias in the referee decision making, leading to players with darker skin-tones to receive more red/yellow cards than players with lighter skin tones.",
+		"The dataset you are provided with consists of players from teams in England and some basic statistics about their performance in matches where the referees were also from England. You are provided with some context about the player regarding their height, weight, and position type, as well as their individual performance reflected by their goals per game (total number of goals scored divided by games played) and the performance of their team (win, loss, and tie percentage). Note that players of the defender position type are the most physical in the sport, attempting to steal the ball from the other team with aggressive tackles. There are two variables reflecting the skin tone of the player: (1) a categorical variable denoted either light, neutral, or dark, and (2) a numeric scale ranging from 0 (very light) to 1 (very dark). You are also provided with the number of red cards, yellow cards, and total cards (red + yellow) per game that the player has received.",
+		"Research question: Do soccer referees tend to give more red cards to darker skinned players? What about yellow cards?"
+	],
+	"variables": {
+		"player_id": "Unique numeric identifier for an individual player",
+		"height": "Player's height in cm",
+		"weight": "Player's weight in kg",
+		"position_type": "Player's position, either goalkeeper, defender, midfielder, or attacker",
+		"skin_tone": "Perception of skin color, either light, neutral, or dark",
+		"skin_tone_numeric": "Perception of skin color on quantitative scale, ranging from 0 for very light to 1 for very dark",
+		"red_cards_per_game": "Number of red cards issued to player divided by number of games played",
+		"yellow_cards_per_game": "Number of yellow cards issued to player divided by number of games played",
+		"total_cards_per_game": "Number of cards (red + yellow) issued to player divided by number of games played",
+		"team_win_percentage": "Number of wins by the player's team divided by number of games played",
+		"team_loss_percentage": "Number of losses by the player's team divided by number of games played",
+		"team_tie_percentage": "Number of ties by the player's team divided by number of games played",
+		"goals_per_game": "Number of goals scored by the player divided by number of games played"
+	}
+}

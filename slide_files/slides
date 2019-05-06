@@ -1,0 +1,114 @@
+---
+title: "Meeting of the Minds 2019"
+author: Francis R. Kovacs
+date: 04/05/2019
+state:
+require:
+    playerSummary: "./player_summary.json"
+    playerSummaryInfo: "./player_summary_info.json"
+type: presentation
+server: https://isle.heinz.cmu.edu
+---
+
+<Preload
+    image={[
+        'https://isle.heinz.cmu.edu/demonstrations_logo_text_vis.png'
+    ]}
+/>
+
+
+<Slide 
+    notes={"Welcome to my presentation"}
+    duration={30}>
+<h2>ISLE:  Solving Computing Challenges for Building a New Interactive Data Analysis Platform</h2>
+
+<h3 style={{"marginTop": "7%", "marginBottom": "7%"}}>Francis R. Kovacs</h3>
+
+<h4>Advised by Dr. Rebecca Nugent and Philipp Burckhardt</h4>
+
+</Slide>
+
+<Slide>
+    <h1 style={{ animation: 'slide-in-left 2.2s', position: "absolute", top: "15%", left: "28%"}} className="center">What is ISLE?</h1>
+    <Image src="https://isle.heinz.cmu.edu/demonstrations_logo_text_vis.png" style={{"width": "600px"}} />
+</Slide>
+
+<Slide>
+    <h1 style={{ position: "absolute", top: "15%", left: "28%", marginBottom: "-8%"}} className="center">What is ISLE?</h1>
+    <ul>
+        <li>Integrated Statistical Learning Environment</li>
+        <br />
+        <Appear><li>A data analysis pipeline</li></Appear>
+    </ul>
+</Slide>
+
+<Slide>
+    <h1>The Pipeline</h1>
+    <ul>
+        <Appear><li>Data Science introduces coding and analysis side-by-side</li></Appear>
+        <Appear><li>Detracts from focus on content.</li></Appear>
+        <Appear><li>Centralize the user experience to place the focus on statistics rather than the computation</li></Appear>
+    </ul>
+</Slide>
+
+<Slide>
+    <h1>In short...</h1>
+    ISLE is a data analysis pipeline that unifies the experience for students to focus on content rather than computing.
+</Slide>
+
+<Slide>
+    <h2>Citations</h2>
+    <ul>
+        <li>one</li>
+    </ul>
+</Slide>
+
+<Slide notes={"This is what I want to say"} >
+    <DataExplorer 
+        id="data_analysis_think_aloud"
+        data={playerSummary} 
+        dataInfo={playerSummaryInfo}
+        showEditor
+        categorical={[
+            'player_id',
+            'position_type',
+            'skin_tone'
+        ]}
+        continuous={[
+            'height',
+            'weight',
+            'red_cards_per_game',
+            'yellow_cards_per_game',
+            'skin_tone_numeric',
+            'total_cards_per_game',
+            'team_win_percentage',
+            'team_loss_percentage',
+            'team_tie_percentage',
+            'goals_per_game'
+        ]}
+        transformer
+        distributions={[]}
+        editorProps={{
+            peerReview: {
+                submitButtonLabel: 'Submit to Reviewer (Phase I)',
+                reviewButtonLabel: 'Send Review Comments (Phase II)',
+                finalButtonLabel: 'Submit Final Report (Phase III)'
+            },
+            defaultValue: `
+# Data analysis
+
+Do *not* remove any of the following headers. 
+
+## YOUR initial report - Phase I
+
+
+## Reviewer comments - Phase II
+
+
+## YOUR revision and conclusion - Phase III
+        
+`
+        }}
+    />
+</Slide>
+
