@@ -1,0 +1,240 @@
+---
+title: "Meeting of the Minds 2019"
+author: Francis R. Kovacs
+date: 04/05/2019
+state:
+require:
+    playerSummary: "./player_summary.json"
+    playerSummaryInfo: "./player_summary_info.json"
+type: presentation
+server: https://isle.heinz.cmu.edu
+---
+
+<Preload
+    image={[
+        'https://isle.heinz.cmu.edu/demonstrations_logo_text_vis.png',
+        'https://isle.heinz.cmu.edu/demonstrations_data_pipline_blank.png',
+        'https://isle.heinz.cmu.edu/demonstrations_data_pipline_GW_large.png',
+        'https://isle.heinz.cmu.edu/demonstrations_data_pipline_GW_editor.png',
+        'https://isle.heinz.cmu.edu/demonstrations_md_commands.png',
+        'https://isle.heinz.cmu.edu/demonstrations_data_pipline_GW_peer_review.png',
+        'https://isle.heinz.cmu.edu/demonstrations_data_pipline_GW_mobile.png'
+    ]}
+/>
+
+
+<Slide 
+    notes={"Welcome to my presentation"}
+    duration={30}>
+<h2>ISLE:  Solving Computing Challenges for Building a New Interactive Data Analysis Platform</h2>
+
+<h3 style={{"marginTop": "7%", "marginBottom": "7%"}}>Francis R. Kovacs</h3>
+
+<h4>Advised by Dr. Rebecca Nugent and Philipp Burckhardt</h4>
+
+</Slide>
+
+<Slide>
+    <h1 style={{ position: "absolute", top: "30%", left: "17%"}} className="center">Want to follow along?</h1>
+
+    <h3 style={{ position: "absolute", top: "50%", left: "5%"}} className="center">isle.heinz.cmu.edu/demonstrations/mom</h3>
+
+
+</Slide>
+
+<Slide>
+    <h1 style={{ animation: 'slide-in-left 2.2s', position: "absolute", top: "15%", left: "28%"}} className="center">What is ISLE?</h1>
+    <Image src="https://isle.heinz.cmu.edu/demonstrations_logo_text_vis.png" style={{"width": "600px"}} />
+</Slide>
+
+<Slide>
+    <h1 style={{ position: "absolute", top: "15%", left: "7%"}} className="center">Aside: Data Analysis Pipeline</h1>
+    <ul style={{marginBottom: "-5%"}}>
+        <Appear order={1}><li>The <i>process</i> by which we analyze data.</li></Appear>
+        <br />
+        <Appear order={2}><li>Introduction of coding at early stages.</li></Appear>
+        <br />
+        <Appear order={3}><li><i>Coding too early may ultimately detract from the basic knowledge base needed to succeed in statistics.</i></li></Appear>
+        <Appear order={1}><Image style={{marginTop: "2.5%"}} src={"https://isle.heinz.cmu.edu/demonstrations_data_pipline_blank.png"} /></Appear>
+    </ul>
+</Slide>
+
+<Slide>
+    <h1 style={{ position: "absolute", top: "15%", left: "28%", marginBottom: "-8%"}} className="center">What is ISLE?</h1>
+    <br />
+    <Appear transitionDuration={200}><Image src={"https://isle.heinz.cmu.edu/demonstrations_data_pipline_GW_large.png"} /></Appear>
+</Slide>
+
+<Slide>
+	<h1 style={{ position: "absolute", top: "15%", left: "18%", marginBottom: "-8%"}} className="center">Recent Developments</h1>
+	<ul>
+		<li>Report Editor</li>
+        <br />
+		<li>Peer Review</li>
+        <br />
+		<li>Mobile</li>
+	</ul>
+</Slide>
+
+<Slide>
+	<h1 style={{ position: "absolute", top: "15%", left: "28%", marginBottom: "-8%"}} className="center">Report Editor</h1>
+    <Appear transitionDuration={200}><Image src={"https://isle.heinz.cmu.edu/demonstrations_data_pipline_GW_editor.png"} /></Appear>
+</Slide>
+
+<Slide>
+	<h2 style={{ position: "absolute", top: "15%", left: "21%"}} className="center">Report Editor: Markdown</h2>
+    <ul>
+        <Appear><li>Extend the <a href="https://github.com/sparksuite/simplemde-markdown-editor">SimpleMDE</a> interface.</li></Appear>
+        <br />
+        <Appear><li>Manipulate codemirror to locate, insert and delete text</li></Appear>
+    </ul>
+</Slide>
+
+<Slide>
+	<h2 style={{ position: "absolute", top: "15%", left: "21%"}} className="center">Report Editor: Markdown</h2>
+    <Image src={"https://isle.heinz.cmu.edu/demonstrations_md_commands.png"} />
+</Slide>
+
+<Slide>
+    <h2 style={{ position: "absolute", top: "15%", left: "17%"}} className="center">Report Editor: Drag and Drop</h2>
+    <ul>
+        <Appear><li>Initially overlooked</li></Appear>
+        <br />
+        <Appear><li>Plotly-JS: toImage, make html tags </li></Appear>
+        <br />
+        <Appear><li>"Hiding" of image data in tag.</li></Appear>
+        <br />
+        <Appear><li>HTML Comments: IMAGE_LOG:ID_randomString( 6 ) maps to image data</li></Appear>
+    </ul>
+</Slide>
+
+<Slide notes={"Replace things whether they got the format or not"}>
+    <h2 style={{ position: "absolute", top: "15%", left: "25%"}} className="center">Report Editor: Export</h2>
+    <ul>
+        <Appear><li>HTML: Insert content inside boilerplate tags.</li></Appear>
+        <br />
+        <Appear><li>PDF: Navigate the Abstract Syntax Tree (AST)</li></Appear>
+        <br />
+        <Appear><li>Parse entirety of AST allows for easy formatting.</li></Appear>
+    </ul>
+</Slide>
+
+<Slide>
+    <h2 style={{ position: "absolute", top: "3%", left: "26%"}} className="center">Report Editor: Demo</h2>
+    <DataExplorer 
+        id="data_analysis_think_aloud"
+        data={playerSummary} 
+        dataInfo={playerSummaryInfo}
+        showEditor
+        categorical={[
+            'player_id',
+            'position_type',
+            'skin_tone'
+        ]}
+        continuous={[
+            'height',
+            'weight',
+            'red_cards_per_game',
+            'yellow_cards_per_game',
+            'skin_tone_numeric',
+            'total_cards_per_game',
+            'team_win_percentage',
+            'team_loss_percentage',
+            'team_tie_percentage',
+            'goals_per_game'
+        ]}
+        transformer
+        distributions={[]}
+        editorProps={{
+            peerReview: {
+                submitButtonLabel: 'Submit to Reviewer (Phase I)',
+                reviewButtonLabel: 'Send Review Comments (Phase II)',
+                finalButtonLabel: 'Submit Final Report (Phase III)'
+            },
+            defaultValue: `
+# Data analysis
+
+Do *not* remove any of the following headers. 
+
+## YOUR initial report - Phase I
+
+
+## Reviewer comments - Phase II
+
+
+## YOUR revision and conclusion - Phase III
+        
+`
+        }}
+    />
+</Slide>
+
+<Slide>
+	<h1 style={{ position: "absolute", top: "15%", left: "32%", marginBottom: "-8%"}} className="center">Peer Review</h1>
+    <Appear transitionDuration={200}><Image src={"https://isle.heinz.cmu.edu/demonstrations_data_pipline_GW_peer_review.png"} /></Appear>
+</Slide>
+
+<Slide>
+    <h2 style={{ position: "absolute", top: "15%", left: "21%"}} className="center">Peer Review: Background</h2>
+    <ul>
+        <Appear><li>Peer feedback has been shown to be extremely influential in student learning (Topping)</li></Appear>
+        <br />
+        <Appear><li><i>Many Students, One Dataset</i> with Burckhardt, Nugent and Yurko</li></Appear>
+        <br />
+        <Appear><li>Students critique the analysis of their peers and respond to comments.</li></Appear>
+    </ul>
+</Slide>
+
+<Slide>
+    <h2 style={{ position: "absolute", top: "15%", left: "21%"}} className="center">Peer Review: Background</h2>
+    <ul>
+        <Appear><li>First attempt to implement peer review highlighted shortcomings in approach</li></Appear>
+        <br />
+        <Appear><li>Problem transformed from one of engineering to one of the student experience in ISLE.</li></Appear>
+    </ul>
+</Slide>
+
+<Slide>
+    <h2 style={{ position: "absolute", top: "15%", left: "16%"}} className="center">Peer Review: Implementation</h2>
+    <ul>
+        <Appear><li>Pairing <TeX raw="\implies" /> Assignments for reviewing and receiving</li></Appear>
+        <br />
+        <Appear><li>Email <TeX raw="\implies" /> Peer 2 Peer with SocketIO</li></Appear>
+        <br />
+        <Appear><li><i>Anticipate</i> student behaviors</li></Appear>
+    </ul>
+</Slide>
+
+<Slide>
+	<h1 style={{ position: "absolute", top: "15%", left: "32%", marginBottom: "-8%"}} className="center">Mobile App</h1>
+    <Appear transitionDuration={200}><Image src={"https://isle.heinz.cmu.edu/demonstrations_data_pipline_GW_mobile.png"} /></Appear>
+</Slide>
+
+<Slide>
+    <h2 style={{ position: "absolute", top: "15%", left: "35%"}} className="center">Mobile App</h2>
+    <ul>
+        <Appear><li>One does not need a computer to interact with data</li></Appear>
+        <br />
+        <Appear><li>Extend dashboard beyond a mobile-responsive view</li></Appear>
+        <br />
+        <Appear><li>iClicker</li></Appear>
+    </ul>
+</Slide>
+
+<Slide>
+    <h1 style={{ position: "absolute", top: "15%", left: "34%"}} className="center">Conclusions</h1>
+    <ul>
+        <Appear><li><i>Unify</i> the data analysis process</li></Appear>
+        <br />
+        <Appear><li>Extend ISLE with respect to anticipated student behaviors</li></Appear>
+        <br />
+        <Appear><li>More accessable to students through a mobile interface.</li></Appear>
+    </ul>
+</Slide>
+
+<Slide>
+    <h1 style={{ position: "absolute", top: "30%", left: "36%"}} className="center">Questions?</h1>
+</Slide>
+
+
+

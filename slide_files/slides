@@ -38,28 +38,32 @@ server: https://isle.heinz.cmu.edu
     <ul>
         <li>Integrated Statistical Learning Environment</li>
         <br />
-        <Appear><li>A data analysis pipeline</li></Appear>
+	<Appear><li>Most programs advocate "early coding exposure"<sup>1</sup></li></Appear>
+	<Appear><li>"We are not convinced this is the correct order", emphasis on content.</li></Appear>
     </ul>
 </Slide>
 
 <Slide>
-    <h1>The Pipeline</h1>
-    <ul>
-        <Appear><li>Data Science introduces coding and analysis side-by-side</li></Appear>
-        <Appear><li>Detracts from focus on content.</li></Appear>
-        <Appear><li>Centralize the user experience to place the focus on statistics rather than the computation</li></Appear>
-    </ul>
+	<h1 style={{ position: "absolute", top: "15%", left: "28%", marginBottom: "-8%"}} className="center">What is ISLE?</h1>
+	<ul>
+		<Appear><li>A <i>platform</i> to unify the data science experience</li></Appear>
+	</ul>
 </Slide>
 
 <Slide>
-    <h1>In short...</h1>
-    ISLE is a data analysis pipeline that unifies the experience for students to focus on content rather than computing.
+	<h2>Recent Developments</h2>
+	<ul>
+		<li>Report Editor</li>
+		<li>Peer Review</li>
+		<li>Mobile</li>
+	</ul>
 </Slide>
+
 
 <Slide>
     <h2>Citations</h2>
     <ul>
-        <li>one</li>
+        <li>1. </li>
     </ul>
 </Slide>
 
